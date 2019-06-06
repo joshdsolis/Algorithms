@@ -3,20 +3,19 @@
 import sys
 
 def rock_paper_scissors(n):
-  final_list = [[] for n in 3**n]
-  base_list = [['rock'],['paper'],['scissors']]
-  def recurse(list, n):
-    final_list = [[] for n in 3**n]
-    for i in range(3**n):
-      final_list[i] += list[i]
-    return recurse(final_list, n)
-  if n == 1:
-    return base_list
-  else:
-    return recurse(base_list, n)
+  base_list = ['rock','paper','scissors']
+  final_list = []
 
-
-  pass 
+  
+  def recurse(n, list):
+    if n == 0:
+      final_list.append(list)
+      return
+    for i in base_list:
+      recurse(n-1, list+[i])
+  
+  recurse(n, [])
+  return final_list 
 
 
 if __name__ == "__main__":
