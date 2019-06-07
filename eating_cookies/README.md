@@ -9,6 +9,29 @@ For example, for a jar of cookies with `n = 3` (the jar has 3 cookies inside it)
  3. He can eat 2 cookies, then 1 cookie
  4. He can eat 3 cookies all at once. 
 
+for `n = 4`
+
+1. 1, 1, 1, 1
+2. 1, 2, 1
+3. 1, 1, 2
+4. 1, 3
+5. 2, 1, 1
+6. 2, 2
+7. 3, 1
+
+for `n = 2`
+
+1. 1, 1
+2. 2, 0
+
+for `n = 1`
+1. 1
+
+f(4) = f(3) + f(2) + f(1) + f(0)
+7    = 4    + 2    + 1    +  1
+f(n) = f(n-1) + f(n-2) + f(n-3) ...
+f(5) = 13
+
 Thus, `eating_cookies(3)` should return an answer of 4.
 
 ## Testing
@@ -17,7 +40,7 @@ For this problem, there's a test that tests your implementation with small input
 
 You'll find that without implementing performance optimizations into your solution, your solution will likely hang on the large input test. 
 
-To run the tests separately, run `python test_eating_cookies.py -k small` in order to run jsut the small input test. Run `python test_eating_cookies.py -k large` to execute just the large input test. If you want to run both tests, just run `python test_eating_cookies.py`.
+To run the tests separately, run `python test_eating_cookies.py -k small` in order to run just the small input test. Run `python test_eating_cookies.py -k large` to execute just the large input test. If you want to run both tests, just run `python test_eating_cookies.py`.
 
 You can also test your implementation manually by executing `python eating_cookies.py [n]`.
 
